@@ -17,38 +17,44 @@ from Triangle import classifyTriangle
 class TestTriangles(unittest.TestCase):
     # define multiple sets of tests as functions with names that begin
 
-    def testRightTriangleA(self): 
+    def testRightTriangle345(self): 
         self.assertEqual(classifyTriangle(3,4,5),'Right','3,4,5 is a Right triangle')
 
-    def testRightTriangleB(self): 
+    def testRightTriangle534(self): 
         self.assertEqual(classifyTriangle(5,3,4),'Right','5,3,4 is a Right triangle')
 
-    def testRightTriangleB(self): 
+    def testRightTriangle453(self): 
         self.assertEqual(classifyTriangle(4,5,3),'Right','4,5,3 is a Right triangle')
         
-    def testEquilateralTriangles(self): 
+    def testEquilateralTriangle111(self): 
         self.assertEqual(classifyTriangle(1,1,1),'Equilateral','1,1,1 should be equilateral')
 
-    def testEquilateralTriangles1(self): 
+    def testEquilateralTriangle155(self): 
         self.assertEqual(classifyTriangle(155,155,155),'Equilateral','155,155,155 should be equilateral')
 
-    def testNotEquilateralTriangles(self): 
+    def testNotEquilateralTriangle545(self): 
         self.assertNotEqual(classifyTriangle(5,4,5),'Equilateral','5,4,5 should be isoceles')
 
-    def testNotEquilateralTriangles(self): 
+    def testNotEquilateralTriangle155(self): 
         self.assertEqual(classifyTriangle(155,145,125),'Equilateral','155,145,125 should be scalene')
 
-    def testScaleneTriangle(self): 
+    def testScaleneTriangle536(self): 
         self.assertEqual(classifyTriangle(5,3,6),'Scalene','5,3,6 is a Scalene triangle')
 
-    def testIsoscelesTriangle1(self): 
+    def testScaleneTriangle749(self): 
+        self.assertEqual(classifyTriangle(7,4,9),'Scalene','7,4,9 is a Scalene triangle')
+
+    def testIsoscelesTriangle566(self): 
         self.assertEqual(classifyTriangle(5,6,6),'Isosceles','5,6,6 is a Isosceles triangle')
 
-    def testIsoscelesTriangle2(self): 
+    def testIsoscelesTriangle656(self): 
         self.assertEqual(classifyTriangle(6,5,6),'Isosceles','6,5,6 is a Isosceles triangle')
 
-    def testIsoscelesTriangle23(self): 
+    def testIsoscelesTriangle665(self): 
         self.assertEqual(classifyTriangle(6,6,5),'Isosceles','6,6,5 is a Isosceles triangle')
+
+    def testNotTriangle285(self): 
+        self.assertEqual(classifyTriangle(2,8,5),'NotATriangle','2,8,5 is a Isosceles triangle')
 
 if __name__ == '__main__':
     print('Running unit tests')
