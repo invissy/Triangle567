@@ -8,6 +8,7 @@ The primary goal of this file is to demonstrate a simple unittest implementation
 """
 
 import unittest
+from datetime import date
 
 from Triangle import classifyTriangle
 
@@ -36,7 +37,7 @@ class TestTriangles(unittest.TestCase):
         self.assertNotEqual(classifyTriangle(5,4,5),'Equilateral','5,4,5 should be isoceles')
 
     def testNotEquilateralTriangle155(self): 
-        self.assertEqual(classifyTriangle(155,145,125),'Equilateral','155,145,125 should be scalene')
+        self.assertNotEqual(classifyTriangle(155,145,125),'Equilateral','155,145,125 should be scalene')
 
     def testScaleneTriangle536(self): 
         self.assertEqual(classifyTriangle(5,3,6),'Scalene','5,3,6 is a Scalene triangle')
@@ -56,7 +57,15 @@ class TestTriangles(unittest.TestCase):
     def testNotTriangle285(self): 
         self.assertEqual(classifyTriangle(2,8,5),'NotATriangle','2,8,5 is a Isosceles triangle')
 
+def my_brand():
+    print("=*=*=*= Cindy Lee =*=*=*=")
+    print("=*=*=*= Course 2023S-SSW567 =*=*=*=")
+    print("=*=*=*= HW 02a - Testing a legacy program and reporting on testing results =*=*=*=")
+    print("=*=*=*=", date.today(), "=*=*=*=")
+    print()
+
 if __name__ == '__main__':
+    my_brand()
     print('Running unit tests')
     unittest.main()
 
